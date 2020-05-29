@@ -33,7 +33,7 @@
                                             <td>{{$post->titre}}</td>
                                             <td>{{$post->text}}</td>
                                             <td class="d-flex">
-                                                <a href="" class="">Afficher</a>
+                                                <a href="{{route('post.show',$post->id)}}" class="">Afficher</a>
                                             </td>
                                         </tr>
                                     @endforeach   
