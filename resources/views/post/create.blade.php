@@ -5,7 +5,7 @@
   @csrf
     <div class="form-example">
       <label for="titre">Titre: </label>
-      <input type="text" name="titre" id="titre">
+      <input type="text" name="titre" id="titre" pattern=".{5,}" required title="5 characters minimum">
     </div> <br>
     <div class="form-example">
       <label for="text">Post: </label>
