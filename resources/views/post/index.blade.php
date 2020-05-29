@@ -16,7 +16,9 @@
                     <div class="card">
                         <div style="text-align: center;">
                             <h1>Tous les posts</h1>
-                            <a href="{{route('post.create')}}">Ajouter un post</a>
+                            <a href="{{route('post.create')}}">
+                                <button>Créer un post</button>
+                            </a>
                         </div>
                         <div style="">
                             <table class="table table-head-fixed text-nowrap">
@@ -26,6 +28,7 @@
                                         <th>Texte</th>
                                         <th>Voir plus</th>
                                         <th>Editer</th>
+                                        <th>Supprimer</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,10 +37,21 @@
                                             <td>{{$post->titre}}</td>
                                             <td>{{$post->text}}</td>
                                             <td class="d-flex">
-                                                <a href="{{route('post.show',$post->id)}}" class="">Afficher</a>
+                                                <a href="{{route('post.show',$post->id)}}" class="">
+                                                    <button>Afficher post</button>
+                                                </a>
                                             </td>
                                             <td>
-                                                <a href="{{route('post.edit',$post->id)}}">Modifier</a>
+                                                <a href="{{route('post.edit',$post->id)}}">
+                                                    <button>Modifier post</button>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <form action="{{route('post.destroy',$post->id)}}" method="post">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button>Effacer post</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach   
