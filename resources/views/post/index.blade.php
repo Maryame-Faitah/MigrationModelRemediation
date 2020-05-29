@@ -25,6 +25,7 @@
                                         <th>Titre</th>
                                         <th>Texte</th>
                                         <th>Voir plus</th>
+                                        <th>Editer</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,6 +35,9 @@
                                             <td>{{$post->text}}</td>
                                             <td class="d-flex">
                                                 <a href="{{route('post.show',$post->id)}}" class="">Afficher</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('post.edit',$post->id)}}">Modifier</a>
                                             </td>
                                         </tr>
                                     @endforeach   
